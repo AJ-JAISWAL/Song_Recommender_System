@@ -1,6 +1,6 @@
 import pickle
 import streamlit as st
-
+import pandas as pd
 st.set_page_config(
     page_title="AJ_Song_Recommender_System",
     page_icon=":rocket:",
@@ -27,8 +27,10 @@ def recommended_song_details(song):
         recommended_song_playlist_url.append(songs.iloc[i[0]].Song_Playlist)
     return recommended_song_names,recommended_song_image,recommended_song_movie_name,recommended_song_playlist_url
 st.header('Song Recommender System')
-songs = pickle.load(open('song.pkl','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
+songs=pd.read_pickle('song.pkl')
+#songs = pickle.load(open('song.pkl','rb'))
+#similarity = pickle.load(open('similarity.pkl','rb'))
+similarity = pd.read_pickle('similarity.pkl')
 
 song_list= songs['Song_Name'].values
 Selected_Songs = st.selectbox("Type or select a song from the dropdown",song_list
