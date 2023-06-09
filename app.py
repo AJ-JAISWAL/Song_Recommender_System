@@ -29,7 +29,7 @@ def recommended_song_details(song):
 st.header('Song Recommender System')
 
 #songs = pickle.load(open('song.pkl','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
+#similarity = pickle.load(open('similarity.pkl','rb'))
 songs = pd.read_pickle('song.pkl')
 similarity = pd.read_pickle('similarity.pkl')
 song_list= songs['Song_Name'].values
