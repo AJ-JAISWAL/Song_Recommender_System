@@ -1,4 +1,3 @@
-import pickle
 import streamlit as st
 import pandas as pd
 st.set_page_config(
@@ -8,6 +7,14 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+dark_mode_theme = """
+    [theme]
+    base="dark"
+    primaryColor="#00FFFF"
+    secondaryBackgroundColor="#222"
+    textColor="#FFF"
+    font="sans serif"
+    """
 
 def recommended_song_details(song):
     index = songs[songs['Song_Name'] == song].index[0]
